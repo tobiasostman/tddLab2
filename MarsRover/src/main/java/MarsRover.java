@@ -9,7 +9,15 @@ public class MarsRover {
         return roverPosition;
     }
 
-    public RoverPosition moveRover(String commandStr) {
+    private boolean validateCommandString(String commandStr){
+
+        return commandStr.matches("^[fb]+[0-9]+(?:,[fb]+[0-9]+)*$");
+    }
+
+    public RoverPosition moveRover(String commandStr) throws Exception {
+
+        if(!validateCommandString(commandStr)) throw new Exception("Invalid command string");
+
         String[] commands = commandStr.split(",");
 
         for (String command : commands) {
