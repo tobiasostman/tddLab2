@@ -15,6 +15,14 @@ public class RoverPosition {
     }
 
     public void setXCoordinate(int xCoordinate) {
+        if(xCoordinate > 5){
+            this.xCoordinate = 1;
+            return;
+        }
+        if(xCoordinate < 1 ){
+            this.xCoordinate = 5;
+            return;
+        }
         this.xCoordinate = xCoordinate;
     }
 
@@ -23,6 +31,14 @@ public class RoverPosition {
     }
 
     public void setYCoordinate(int yCoordinate) {
+        if(yCoordinate > 5){
+            this.yCoordinate = 1;
+            return;
+        }
+        if(yCoordinate < 1){
+            this.yCoordinate = 5;
+            return;
+        }
         this.yCoordinate = yCoordinate;
     }
 

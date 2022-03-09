@@ -35,7 +35,7 @@ public class MarsRoverTests {
     @Test
     @DisplayName("Should move backward")
     public void shouldMoveBackward() throws Exception {
-        assertEquals(0, rover.moveRover("b1").xCoordinate);
+        assertEquals(5, rover.moveRover("b1").xCoordinate);
     }
 
     @Test
@@ -104,4 +104,50 @@ public class MarsRoverTests {
         assertEquals(Direction.South, rover.moveRover("r6").getDirection());
     }
 
+    @Test
+    @DisplayName("Should move to xCoordinate 5m facing north")
+    public void shouldMoveToXCoordinate5FacingNorth() throws Exception {
+        assertEquals(5, rover.moveRover("b1").xCoordinate);
+    }
+
+    @Test
+    @DisplayName("Should move to xCoordinate 1, facing north")
+    public void shouldMoveToXCoordinate1FacingNorth() throws Exception {
+        assertEquals(1, rover.moveRover("f5").xCoordinate);
+    }
+
+    @Test
+    @DisplayName("Should move to yCoordinate 5, facing east")
+    public void shouldMoveToYCoordinate5FacingEast() throws Exception {
+        assertEquals(5, rover.moveRover("l1,b1").yCoordinate);
+    }
+
+    @Test
+    @DisplayName("Should move to yCoordinate 1, facing east")
+    public void shouldMoveToYCoordinate1FacingEast() throws Exception {
+        assertEquals(1, rover.moveRover("l1,f5").yCoordinate);
+    }
+
+    @Test
+    @DisplayName("Should move to xCoordinate 3, facing south")
+    public void shouldMoveToXCoordinate3FacingSouth() throws Exception {
+        assertEquals(3, rover.moveRover("l2,b2").xCoordinate);
+    }
+    @Test
+    @DisplayName("Should move to xCoordinate 4, facing south")
+    public void shouldMoveToXCoordinate4FacingSouth() throws Exception {
+        assertEquals(4, rover.moveRover("l2,f2").xCoordinate);
+    }
+
+    @Test
+    @DisplayName("Should move to xCoordinate 4, facing west")
+    public void shouldMoveToXCoordinate2FacingWest() throws Exception {
+        assertEquals(4, rover.moveRover("r1,f2").yCoordinate);
+    }
+
+    @Test
+    @DisplayName("Should move to xCoordinate 5, facing west")
+    public void shouldMoveToXCoordinate4FacingWest() throws Exception {
+        assertEquals(5, rover.moveRover("r1,b4").yCoordinate);
+    }
 }
